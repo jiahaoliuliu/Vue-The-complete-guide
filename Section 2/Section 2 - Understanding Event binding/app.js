@@ -5,6 +5,15 @@ const app = Vue.createApp({
             name: ''
         };
     },
+    computed: {
+        fullname() {
+            console.log("Running again in computed properties");
+            if (this.name === '') {
+                return '';
+            }
+            return this.name + " liu";
+        }
+    },
     methods: {
         addCounter(num) {
             this.counter = this.counter + num;
@@ -22,11 +31,12 @@ const app = Vue.createApp({
             this.name = '';
         },
         outputFullname() {
+            console.log("Running again...");
             if (this.name === '') {
                 return '';
             }
             return this.name + " liu";
-        }
+        },
     },
 });
 
