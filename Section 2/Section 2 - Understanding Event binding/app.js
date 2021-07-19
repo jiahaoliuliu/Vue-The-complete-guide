@@ -3,27 +3,35 @@ const app = Vue.createApp({
         return {
             counter: 10,
             name: '',
-            fullname: ''
+            lastname: ''
+                // fullname: ''
         };
     },
     watch: {
-        // Whenever the data 'name' changes, this method will be executed
-        name(value) {
-            if (value === '') {
-                this.fullname = ''
-            } else {
-                this.fullname = value + ' ' + 'Liu';
-            }
-        }
+        // // Whenever the data 'name' changes, this method will be executed
+        // name(value) {
+        //     if (value === '') {
+        //         this.fullname = ''
+        //     } else {
+        //         this.fullname = value + ' ' + this.lastname;
+        //     }
+        // },
+        // lastname(value) {
+        //     if (value === '') {
+        //         this.fullname = ''
+        //     } else {
+        //         this.fullname = this.name + ' ' + value;
+        //     }
+        // }
     },
     computed: {
-        // fullname() {
-        //     console.log("Running again in computed properties");
-        //     if (this.name === '') {
-        //         return '';
-        //     }
-        //     return this.name + " liu";
-        // }
+        fullname() {
+            console.log("Running again in computed properties");
+            if (this.name === '' || this.lastname === '') {
+                return '';
+            }
+            return this.name + ' ' + this.lastname;
+        }
     },
     methods: {
         addCounter(num) {
