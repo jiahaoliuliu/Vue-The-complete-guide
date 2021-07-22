@@ -17,22 +17,32 @@ const app = Vue.createApp({
 
 app.mount('#app');
 
-const data = {
-    message: 'Hello!'
-};
-
-const handler = {
-    // This is called trap
-    set(target, key, value) {
-        if (key === 'message') {
-            target.longMessage = value + ' World';
+const app2 = Vue.createApp({
+    data() {
+        return {
+            favouriteMeal: 'Pizza'
         }
-        target.message = value;
     }
-};
+});
 
-const proxy = new Proxy(data, handler);
+app2.mount('#app2');
 
-proxy.message = 'Hello!!!!';
+// const data = {
+//     message: 'Hello!'
+// };
 
-console.log(proxy.longMessage);
+// const handler = {
+//     // This is called trap
+//     set(target, key, value) {
+//         if (key === 'message') {
+//             target.longMessage = value + ' World';
+//         }
+//         target.message = value;
+//     }
+// };
+
+// const proxy = new Proxy(data, handler);
+
+// proxy.message = 'Hello!!!!';
+
+// console.log(proxy.longMessage);
