@@ -20,12 +20,32 @@
 export default {
   // Declaration of the list of properties.
   // They are available both on javascript and on templates
-  props: [
-    'name',
-    'phoneNumber',
-    'emailAddress',
-    'isFavorite'
-  ],
+  // props: [
+  //   'name',
+  //   'phoneNumber',
+  //   'emailAddress',
+  //   'isFavorite'
+  // ],
+  props: {
+    // Normal validation
+    name: String,
+    // Better validation
+    phoneNumber: {
+      type: String,
+      required: true
+    },
+    // Validation with methods
+    emailAddress: String,
+        // Validation with validator method
+    isFavorite: {
+      type: String,
+      required: false,
+      default: '0',
+      validator: function(value) {
+        return value === '1' || value === '0'
+      }
+    }
+  },
   data() {
     return {
       detailsAreVisible: false,
