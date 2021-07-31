@@ -3,7 +3,7 @@
         <header>
             <slot name="header"></slot>
         </header>
-        <slot></slot>
+        <slot name="default"></slot>
     </div>
 </template>
 
