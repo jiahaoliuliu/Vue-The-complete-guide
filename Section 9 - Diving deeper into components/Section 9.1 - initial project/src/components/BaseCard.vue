@@ -22,4 +22,10 @@ div {
   padding: 1rem;
 }
 
+section header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 </style>
